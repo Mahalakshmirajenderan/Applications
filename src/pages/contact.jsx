@@ -1,14 +1,16 @@
 import { FiPhone } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 import emailjs from "emailjs-com";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Contact() {
   const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     emailjs
       .sendForm(
@@ -20,19 +22,21 @@ export default function Contact() {
       .then(
         () => {
           toast.success("Message sent successfully! ", {
-            position: "top-left",
+            position: "top-right",
           });
           form.current.reset();
+          setIsSubmitting(false);
         },
         (error) => {
           toast.error("Failed to send message ", {
-            position: "top-left",
+            position: "top-right",
           });
+          setIsSubmitting(false);
         }
       );
   };
   return (
-    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 dark:text-white transition-colors duration-300  h-[calc(100vh-60px)] overflow-y-auto">
+    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 min-h-screen dark:text-white transition-colors duration-300  h-[calc(100vh-60px)] overflow-y-auto">
       <h3 className="text-[40px] font-poppins font-medium mb-4">CONTACT</h3>
       <div className="flex-1 mr-0 w-1/2 h-1 bg-gradient-to-r from-[#FF9C1A] to-[#EC1B09] rounded my-4"></div>
 
@@ -49,9 +53,6 @@ export default function Contact() {
           </div>
           <h1 className="flex-1 font-poppins text-[13px] font-normal">
             +91 9344587124
-          </h1>
-          <h1 className="flex-1 font-poppins text-[13px] font-normal">
-            +91 9597708388
           </h1>
         </div>
 
@@ -122,9 +123,10 @@ export default function Contact() {
           <div className="flex justify-center">
             <button
               type="submit"
+              disabled={isSubmitting}
               className="bg-gradient-to-r from-[#FF9C1A] to-[#EC1B09] hover:bg-[#d19b96] text-white py-3 px-6 rounded-full font-raleway font-semibold text-lg transition-colors duration-200"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

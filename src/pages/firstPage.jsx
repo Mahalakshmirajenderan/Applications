@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 export default function FirstPage() {
   return (
-    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 dark:text-white transition-colors duration-300 h-auto min-h-screen overflow-y-auto">
+    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 dark:text-white transition-colors duration-300  min-h-screen  h-[calc(100vh-60px)] overflow-y-auto ">
       <h3 className="text-3xl sm:text-4xl font-poppins font-medium mb-4">
         ABOUT ME
       </h3>

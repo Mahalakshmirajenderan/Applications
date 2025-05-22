@@ -50,8 +50,8 @@ const HomePage = () => {
   return (
     <div
       ref={resumeRef}
-      className="bg-[#F2F5F9] dark:bg-[#1a1a1a] text-black dark:text-white transition-colors duration-300 min-h-screen"
-      style={{ padding: "2%" }}
+      className="bg-[#F2F5F9] dark:bg-[#1a1a1a] text-black dark:text-white transition-colors duration-300 max-h-screen  h-[calc(100vh-60px)] overflow-y-auto"
+      style={{ padding: "1%" }}
     >
       <header>
         <div className="container mx-auto px-4 sm:px-4 py-4 flex justify-between items-center">
@@ -98,17 +98,17 @@ const HomePage = () => {
         </div>
       </header>
 
-      <div className="flex flex-col sm:flex-row lg:flex-row">
+      <div className="flex flex-col sm:flex-row lg:flex-row p-4 sm:p-6 lg:p-6 gap-4">
         <aside
           id="default-sidebar"
-          className="w-full md:w-80 h-auto md:h-screen bg-[#F2F5F9] dark:bg-[#222] flex flex-col justify-between transition duration-300"
+          className="w-full md:w-80 h-full bg-[#F2F5F9] dark:bg-[#222] flex flex-col justify-between transition duration-300 rounded-lg"
           aria-label="Sidebar"
         >
-          <div className="relative w-full bg-white dark:bg-gray-800 rounded-3xl shadow-md flex flex-col items-center pt-20 pb-6 px-4">
+          <div className="relative w-full bg-white dark:bg-gray-800 rounded-3xl shadow-md flex flex-col items-center pt-10 pb-6 px-4">
             <div className="absolute-top-16">
               <img
                 src={logoImage}
-                className="w-36 sm:w-44 md:w-52 h-32 sm:h-36 md:h-44 rounded-2xl border-4 border-white shadow-md object-cover"
+                className="w-40 sm:w-44 md:w-52 h-32 sm:h-36 md:h-44 rounded-2xl border-4 border-white shadow-md object-cover"
                 alt="Profile"
               />
             </div>
@@ -194,7 +194,7 @@ const HomePage = () => {
           </div>
         </aside>
 
-        <main className="flex-1 w-full max-w-full sm:max-w-5xl lg:max-w-6xl mx-auto p-4 sm:p-6 bg-white dark:bg-gray-900 shadow-md rounded-lg overflow-y-auto transition duration-300">
+        <main className="flex-1 w-full max-w-full sm:max-w-5xl lg:max-w-6xl mx-auto p-4 sm:p-6 bg-white dark:bg-gray-900 shadow-md rounded-lg transition duration-300 h-full">
           <Outlet />
         </main>
       </div>

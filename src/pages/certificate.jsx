@@ -1,6 +1,6 @@
 export default function Certificate() {
   return (
-    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 dark:text-white transition-colors duration-300  h-[calc(100vh-60px)] overflow-y-auto">
+    <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 text-gray-900 dark:text-white transition-colors duration-300  min-h-screen h-[calc(100vh-60px)] overflow-y-auto">
       <h3 className="text-[40px] font-poppins font-medium mb-4">
         CERTIFICATES
       </h3>
@@ -97,14 +97,7 @@ export default function Certificate() {
           <div className="p-6 bg-gradient-to-br from-[#FFF2E1] to-[#FFD9B7] dark:from-[#4b4b4b] dark:to-[#2f2f2f] border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-[1.02]">
             <div className="flex flex-col gap-2">
               <h3 className="text-lg font-poppins font-semibold text-gray-800 dark:text-white">
-                <a
-                  href="https://learn.microsoft.com/api/credentials/share/en-us/MahalakshmiRajendran-6670/79D4EE3E7F6B52?sharingId"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {" "}
-                  Azure Fundamentals
-                </a>
+                Azure Fundamentals
               </h3>
               <h4 className="text-sm font-poppins font-medium text-[#FF6B00] dark:text-[#FFAE5D] uppercase tracking-wide">
                 Certificate by Microsoft
